@@ -1,9 +1,11 @@
 import axios from "axios";
 import Head from "next/head";
 import { useState } from "react";
+import ip from 'ip'
 
 export default function Home() {
-  const [ip, setIp] = useState("");
+  const [clientIP, setClientIP] = useState("");
+  console.log(ip.address());
   return (
     <>
       <Head>
