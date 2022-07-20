@@ -1,11 +1,30 @@
 import axios from "axios";
 import Head from "next/head";
-import { useState } from "react";
-import ip from 'ip'
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [clientIP, setClientIP] = useState("");
-  console.log(ip.address());
+  const [geoData, setGeoData] = useState(null);
+  // getting geolocation data, use effect dependency is set in a form such that it runs only till it gets a valid response
+  useEffect(() => {
+    axios.get("http://www.geoplugin.net/json.gp").then((r) => {
+      setGeoData({
+        ip: r.data.geoplugin_request,
+        lat: r.data.geoplugin_latitude,
+        long: r.data.geoplugin_longitude,
+        city: r.data.geoplugin_city,
+        region: r.data.geoplugin_regionName,
+        regin_code: r.data.geoplugin_regionCode,
+        country: r.data.geoplugin_countryName,
+        country_code: r.data.geoplugin_countryCode,
+        continent: r.data.geoplugin_continentName,
+        continent_code: r.data.geoplugin_continentCode,
+        currency: r.data.geoplugin_currencyCode,
+        currency_symbol: r.data.geoplugin_currencySymbol,
+        currency_value: r.data.geoplugin_currencyConverter,
+      });
+      console.log(geoData);
+    });
+  }, [geoData !== null]);
   return (
     <>
       <Head>
