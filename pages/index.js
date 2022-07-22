@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [geoData, setGeoData] = useState(null);
+  const [browserDetail, setBrowserDetail] = useState(null);
+  const [plugins, setPlugins] = useState(null)
+  const [installedFonts, setInstalledFonts] = useState(null)
   // getting geolocation data, use effect dependency is set in a form such that it runs only till it gets a valid response
   useEffect(() => {
     axios.get("http://www.geoplugin.net/json.gp").then((r) => {
@@ -22,15 +25,17 @@ export default function Home() {
         currency_symbol: r.data.geoplugin_currencySymbol,
         currency_value: r.data.geoplugin_currencyConverter,
       });
-      console.log(geoData);
     });
   }, [geoData !== null]);
   useEffect(() => {
     const { ClientJS } = require("clientjs");
     // Create a new ClientJS object
     const client = new ClientJS();
-    // console.log(client.getUserAgent());
-  }, []);
+    setBrowserDetail(client.getBrowserData());
+    setPlugins(client.getPlugins().split(','))
+    setInstalledFonts(client.getFonts().split(','))
+    console.log(installedFonts);
+  }, [browserDetail !== null]);
   return (
     <>
       <Head>
