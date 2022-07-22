@@ -40,7 +40,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <p className="bg-fuchsia-900 text-fuchsia-900">jcbakjcbaskc</p>
+        <p className="bg-malibu-900 text-fuchsia-900">jcbakjcbaskc</p>
       </main>
     </>
   );
