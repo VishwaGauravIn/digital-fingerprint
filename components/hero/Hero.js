@@ -15,14 +15,13 @@ export default function Hero() {
     setFingerprint(client.getFingerprint());
   }, [fingerprint !== null]);
   return (
-    <>
       <div className="flex flex-col-reverse md:flex-row justify-center mt-14 md:mt-28">
         <div className="w-full md:w-6/12 justify-center flex flex-col">
           <p className="text-5xl lg:text-6xl font-semibold flex text-malibu-200 my-6 sm:my-4">
             Your Digital Fingerprint
           </p>
           <p className="text-xl lg:text-2xl xl:text-3xl text-malibu-200/80">
-            Check the your data which can be stolen whenever you visit a site.
+            Check your data which can be stolen whenever you visit a site.
           </p>
           <div className="my-4 flex flex-col gap-4">
             <p className="flex text-xl lg:text-2xl items-center">
@@ -56,6 +55,5 @@ export default function Hero() {
           />
         </div>
       </div>
-    </>
   );
 }

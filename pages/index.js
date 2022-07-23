@@ -21,7 +21,7 @@ export default function Home() {
         long: r.data.geoplugin_longitude,
         city: r.data.geoplugin_city,
         region: r.data.geoplugin_regionName,
-        regin_code: r.data.geoplugin_regionCode,
+        region_code: r.data.geoplugin_regionCode,
         country: r.data.geoplugin_countryName,
         country_code: r.data.geoplugin_countryCode,
         continent: r.data.geoplugin_continentName,
@@ -52,7 +52,8 @@ export default function Home() {
       <main className="p-6 sm:p-8 text-zinc-200">
         <Header />
         <Hero />
-        <GeoData />
+        {geoData !== null && <GeoData geoData={geoData} />}
+
         <ClientData />
         <Footer />
       </main>
