@@ -1,6 +1,11 @@
 import axios from "axios";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import ClientData from "../components/clientdata/ClientData";
+import Footer from "../components/footer/Footer";
+import GeoData from "../components/geodata/GeoData";
+import Header from "../components/header/Header";
+import Hero from "../components/hero/Hero";
 
 export default function Home() {
   const [geoData, setGeoData] = useState(null);
@@ -44,8 +49,12 @@ export default function Home() {
         <link rel="icon" href="/logo_sm.png" />
       </Head>
 
-      <main>
-        <p className="bg-malibu-900 text-fuchsia-900">jcbakjcbaskc</p>
+      <main className="p-2">
+        <Header />
+        <Hero />
+        <GeoData />
+        <ClientData />
+        <Footer />
       </main>
     </>
   );
