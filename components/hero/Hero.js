@@ -16,8 +16,8 @@ export default function Hero() {
     setFingerprint(client.getFingerprint());
   }, [fingerprint !== null]);
   return (
-    <div className="mt-14 md:mt-28">
-      <Layout col="reverse" imgSrc="/hero.svg">
+    <div className="flex flex-col-reverse md:flex-row justify-center mt-14 md:mt-28">
+      <div className="w-full md:w-6/12 justify-center flex flex-col">
         <p className="text-5xl lg:text-6xl font-semibold flex text-malibu-200 my-6 sm:my-4">
           Your Digital Fingerprint
         </p>
@@ -46,7 +46,15 @@ export default function Hero() {
           Your secret identifier:{" "}
           <span className="font-bold">{fingerprint}</span>
         </p>
-      </Layout>
+      </div>
+      <div className="w-full md:w-6/12 flex justify-center items-center">
+        <img
+          src='/hero.svg'
+          alt="image"
+          className="select-none pointer-events-none w-11/12"
+          draggable={false}
+        />
+      </div>
     </div>
   );
 }
