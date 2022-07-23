@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Header() {
   return (
-    <div className="w-full flex items-center relative p-4 sm:p-6 justify-between">
+    <div className="w-full flex items-center relative justify-between">
       <span className="flex items-center">
         <img src="/logo_sm.png" alt="" className="w-8 h-8 mr-2" />
         <p className="text-4xl font-medium text-malibu-400">df</p>

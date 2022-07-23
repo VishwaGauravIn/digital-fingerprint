@@ -49,7 +49,7 @@ export default function Home() {
         <link rel="icon" href="/logo_sm.png" />
       </Head>
 
-      <main className="p-2">
+      <main className="p-6 sm:p-8 text-zinc-200">
         <Header />
         <Hero />
         <GeoData />
