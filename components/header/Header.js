@@ -4,8 +4,8 @@ export default function Header() {
   return (
     <div className="w-full flex items-center relative justify-between">
       <span className="flex items-center">
-        <img src="/logo_sm.png" alt="" className="w-8 h-8 mr-2" />
-        <p className="text-4xl font-medium text-malibu-400">df</p>
+        <img src="/logo_sm.png" alt="" className="w-6 sm:w-8 h-6 sm:h-8 mr-2" />
+        <p className="text-2xl sm:text-4xl font-medium text-malibu-400">df</p>
       </span>
 
       <a
