@@ -1,4 +1,4 @@
-import { FingerprintIcon } from "@heroicons/react/outline";
+import { FingerPrintIcon, FingerprintIcon } from "@heroicons/react/outline";
 import axios from "axios";
 import Head from "next/head";
 import Script from "next/script";
@@ -115,7 +115,7 @@ export default function Home() {
         </main>
       ) : (
         <div className="min-h-screen w-full flex justify-center items-center text-malibu-400">
-          <FingerprintIcon className="w-10 animate-pulse" />
+          <FingerPrintIcon className="w-10 animate-pulse" />
         </div>
       )}
     </>
