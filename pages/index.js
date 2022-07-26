@@ -1,3 +1,4 @@
+import { FingerPrintIcon } from "@heroicons/react/outline";
 import axios from "axios";
 import Head from "next/head";
 import { useEffect, useState } from "react";
@@ -57,7 +58,9 @@ export default function Home() {
           <Footer />
         </main>
       ) : (
-        <></>
+        <div className="min-h-screen w-full flex justify-center items-center text-malibu-400">
+          <FingerPrintIcon className="w-10 animate-pulse" />
+        </div>
       )}
     </>
   );
