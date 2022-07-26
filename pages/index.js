@@ -14,21 +14,22 @@ export default function Home() {
   const [installedFonts, setInstalledFonts] = useState(null);
   // getting geolocation data, use effect dependency is set in a form such that it runs only till it gets a valid response
   useEffect(() => {
-    axios.get("/api/hello").then((r) => {
-      setGeoData({
-        ip: r.data.geoplugin_request,
-        lat: r.data.geoplugin_latitude,
-        long: r.data.geoplugin_longitude,
-        city: r.data.geoplugin_city,
-        region: r.data.geoplugin_regionName,
-        region_code: r.data.geoplugin_regionCode,
-        country: r.data.geoplugin_countryName,
-        country_code: r.data.geoplugin_countryCode,
-        continent: r.data.geoplugin_continentName,
-        continent_code: r.data.geoplugin_continentCode,
-        currency: r.data.geoplugin_currencyCode,
-        currency_symbol: r.data.geoplugin_currencySymbol,
-        currency_value: r.data.geoplugin_currencyConverter,
+    axios.get("https://geolocation-db.com/json/").then((res) => {
+      axios.get(`/api/hello?ip=${res.data.IPv4}`).then((r) => {
+        console.log(r.data);
+        setGeoData({
+          ip: res.data.IPv4,
+          lat: r.data.lat,
+          long: r.data.lon,
+          city: r.data.city,
+          region: r.data.regionName,
+          region_code: r.data.region,
+          country: r.data.country,
+          country_code: r.data.countryCode,
+          isp: r.data.isp,
+          timezone: r.data.timezone,
+          org: r.data.org,
+        });
       });
     });
   }, [geoData !== null]);
@@ -39,7 +40,6 @@ export default function Home() {
     const client = new ClientJS();
     setBrowserDetails(client.getBrowserData());
     setInstalledFonts(client.getFonts().split(",").length);
-    console.log(client.getBrowserData());
   }, [browserDetails !== null]);
   return (
     <>

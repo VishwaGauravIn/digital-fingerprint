@@ -2,8 +2,9 @@
 
 import axios from "axios";
 
-export default function handler(req, res) {
-  axios.get("http://www.geoplugin.net/json.gp/").then((r) => {
+export default async function getStaticProps(req, res) {
+  let ip = req.query.ip;
+  axios.get(`http://ip-api.com/json/${ip}`).then((r) => {
     res.status(200).json(r.data);
   });
 }

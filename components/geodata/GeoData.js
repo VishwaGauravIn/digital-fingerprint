@@ -28,22 +28,13 @@ export default function GeoData({ geoData }) {
           </b>
         </p>
         <p className="text-lg sm:text-xl lg:text-2xl py-2 sm:py-4">
-          Continent:{" "}
-          <b>
-            {geoData.continent} ({geoData.continent_code})
-          </b>
+          ISP: <b>{geoData.isp}</b>
         </p>
         <p className="text-lg sm:text-xl lg:text-2xl py-2 sm:py-4">
-          Currency:{" "}
-          <b>
-            {geoData.currency} ({geoData.currency_symbol})
-          </b>
+          Timezone: <b>{geoData.timezone}</b>
         </p>
         <p className="text-lg sm:text-xl lg:text-2xl py-2 sm:py-4">
-          Currency Value:{" "}
-          <b>
-            $ 1 = {geoData.currency_symbol} {geoData.currency_value}
-          </b>
+          Org: <b>{geoData.org}</b>
         </p>
         <a
           href={`https://www.google.com/maps/@${geoData.lat},${geoData.long}`}
@@ -54,6 +45,9 @@ export default function GeoData({ geoData }) {
           See Location on Map
           <ExternalLinkIcon className="w-6 ml-2" />
         </a>
+        <p className="text-sm opacity-50 pt-2">
+          *GeoData is based on your ISP, it&apos;s not a precised location.
+        </p>
       </div>
       <div className="w-full md:w-6/12 flex justify-center items-center">
         <img
