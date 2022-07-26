@@ -14,7 +14,7 @@ export default function Home() {
   const [installedFonts, setInstalledFonts] = useState(null);
   // getting geolocation data, use effect dependency is set in a form such that it runs only till it gets a valid response
   useEffect(() => {
-    axios.get("http://www.geoplugin.net/json.gp").then((r) => {
+    axios.get("http://www.geoplugin.net/json.gp/").then((r) => {
       setGeoData({
         ip: r.data.geoplugin_request,
         lat: r.data.geoplugin_latitude,
