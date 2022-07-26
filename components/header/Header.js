@@ -1,3 +1,4 @@
+import { ExternalLinkIcon } from "@heroicons/react/outline";
 import React from "react";
 
 export default function Header() {
@@ -9,12 +10,12 @@ export default function Header() {
       </span>
 
       <a
-        href="https://www.buymeacoffee.com/VishwaGauravIn"
-        className="flexjustify-center items-center p-2 px-6 bg-malibu-300 text-malibu-900 font-semibold rounded-full shadow-lg hover:shadow-malibu-300/30 sm:hover:scale-[1.02] transition-all ease-in-out duration-100 scale-75 -mr-6 md:mr-0 sm:scale-100 outline-none"
+        href="https://github.com/VishwaGauravIn/digital-fingerprint"
+        className="flex justify-center items-center p-2 px-6 bg-malibu-300 text-malibu-900 font-semibold rounded-full shadow-lg hover:shadow-malibu-300/30 sm:hover:scale-[1.02] transition-all ease-in-out duration-100 scale-75 -mr-6 md:mr-0 sm:scale-100 outline-none"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Donate us
+        GitHub <ExternalLinkIcon className="w-6 ml-2" />
       </a>
     </div>
   );
