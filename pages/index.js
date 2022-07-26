@@ -10,7 +10,6 @@ import Hero from "../components/hero/Hero";
 export default function Home() {
   const [geoData, setGeoData] = useState(null);
   const [browserDetail, setBrowserDetail] = useState(null);
-  const [plugins, setPlugins] = useState(null);
   const [installedFonts, setInstalledFonts] = useState(null);
   // getting geolocation data, use effect dependency is set in a form such that it runs only till it gets a valid response
   useEffect(() => {
@@ -38,8 +37,9 @@ export default function Home() {
     // Create a new ClientJS object
     const client = new ClientJS();
     setBrowserDetail(client.getBrowserData());
-    setPlugins(client.getPlugins().split(","));
     setInstalledFonts(client.getFonts().split(","));
+    console.log(client.getBrowserData());
+    console.log(client.getFonts().split(","));
   }, [browserDetail !== null]);
   return (
     <>
