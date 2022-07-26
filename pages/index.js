@@ -1,4 +1,4 @@
-import { FingerPrintIcon } from "@heroicons/react/outline";
+import { FingerprintIcon } from "@heroicons/react/outline";
 import axios from "axios";
 import Head from "next/head";
 import Script from "next/script";
@@ -47,7 +47,7 @@ export default function Home() {
       <Head>
         <title>Digital Fingerprint</title>
         <link rel="icon" href="/logo_sm.png" />
-        <meta name="title" content="Digital FIngerprint" />
+        <meta name="title" content="Digital Fingerprint" />
 
         <meta
           name="description"
@@ -60,7 +60,7 @@ export default function Home() {
 
         <meta property="og:url" content="https://df.itsvg.in" />
 
-        <meta property="og:title" content="Digital FIngerprint" />
+        <meta property="og:title" content="Digital Fingerprint" />
 
         <meta
           property="og:description"
@@ -73,7 +73,7 @@ export default function Home() {
 
         <meta property="twitter:url" content="https://df.itsvg.in" />
 
-        <meta property="twitter:title" content="Digital FIngerprint" />
+        <meta property="twitter:title" content="Digital Fingerprint" />
 
         <meta
           property="twitter:description"
@@ -115,7 +115,7 @@ export default function Home() {
         </main>
       ) : (
         <div className="min-h-screen w-full flex justify-center items-center text-malibu-400">
-          <FingerPrintIcon className="w-10 animate-pulse" />
+          <FingerprintIcon className="w-10 animate-pulse" />
         </div>
       )}
     </>
