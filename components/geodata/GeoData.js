@@ -37,7 +37,7 @@ export default function GeoData({ geoData }) {
           Org: <b>{geoData.org}</b>
         </p>
         <a
-          href={`https://www.google.com/maps/@${geoData.lat},${geoData.long}`}
+          href={`https://mail.google.com/maps/search/${geoData.lat},${geoData.long}`}
           className="flex justify-center items-center w-max p-3 px-6 bg-malibu-300 text-malibu-900 font-semibold rounded-full shadow-lg hover:shadow-malibu-300/30 sm:hover:scale-[1.02] transition-all ease-in-out duration-100 outline-none my-2"
           target="_blank"
           rel="noopener noreferrer"
