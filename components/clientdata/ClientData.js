@@ -14,9 +14,11 @@ export default function ClientData({ browserDetails, installedFonts }) {
             {browserDetails.browser.name} v {browserDetails.browser.version}
           </b>
         </p>
-        <p className="text-lg sm:text-xl lg:text-2xl py-2 sm:py-4">
-          CPU arch: <b>{browserDetails.cpu.architecture}</b>
-        </p>
+        {browserDetails.cpu.architecture !== undefined && (
+          <p className="text-lg sm:text-xl lg:text-2xl py-2 sm:py-4">
+            CPU arch: <b>{browserDetails.cpu.architecture}</b>
+          </p>
+        )}
         <p className="text-lg sm:text-xl lg:text-2xl py-2 sm:py-4">
           Browser Engine: <b>{browserDetails.engine.name}</b>
         </p>
