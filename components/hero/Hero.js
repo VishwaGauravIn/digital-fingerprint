@@ -34,7 +34,7 @@ export default function Hero() {
           </p>
           <p className="flex text-xl lg:text-2xl items-center">
             <LocationMarkerIcon className="w-8 lg:w-10 stroke-[1] mr-2" />
-            Loaction
+            Location
           </p>
           <p className="flex text-xl lg:text-2xl items-center">
             <PuzzleIcon className="w-8 lg:w-10 stroke-[1] mr-2" />
